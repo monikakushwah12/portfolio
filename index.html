@@ -539,37 +539,37 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-    <!-- <?php -->
-    <!-- $successMessage = ""; -->
-    <!-- $errorMessage = ""; -->
-<!--  -->
-    <!-- if ($_SERVER["REQUEST_METHOD"] == "POST") { -->
-        <!-- $name = htmlspecialchars(trim($_POST['name'])); -->
-        <!-- $email = htmlspecialchars(trim($_POST['email'])); -->
-        <!-- $subject = htmlspecialchars(trim($_POST['subject'])); -->
-        <!-- $message = htmlspecialchars(trim($_POST['message'])); -->
-<!--  -->
-        <!-- $to = "monika288958@gmail.com"; // Your email address -->
-    <!--  -->
-        <!-- $headers = "From: $name <$email>\r\n"; -->
-        <!-- $headers .= "Reply-To: $email\r\n"; -->
-        <!-- $headers .= "Content-Type: text/plain; charset=UTF-8\r\n"; -->
-<!--  -->
-        <!-- $email_body = "New contact form submission:\n\n"; -->
-        <!-- $email_body .= "Name: $name\n"; -->
-        <!-- $email_body .= "Email: $email\n"; -->
-        <!-- $email_body .= "Subject: $subject\n"; -->
-        <!-- $email_body .= "Message:\n$message\n"; -->
-<!--  -->
-        <!-- if (mail($to, "Enquiry Form", $email_body, $headers)) { -->
-            <!-- echo "<script>alert('Your message has been sent successfully.'); window.location.href='index.php';</script>"; -->
-            <!-- exit(); -->
-        <!-- } else { -->
-            <!-- echo "<script>alert('Failed to send message. Please try again later.'); window.history.back();</script>"; -->
-            <!-- exit(); -->
-        <!-- } -->
-    <!-- } -->
-    <!-- ?> -->
+    <?php
+    $successMessage = "";
+    $errorMessage = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = htmlspecialchars(trim($_POST['name']));
+        $email = htmlspecialchars(trim($_POST['email']));
+        $subject = htmlspecialchars(trim($_POST['subject']));
+        $message = htmlspecialchars(trim($_POST['message']));
+
+        $to = "monika288958@gmail.com"; // Your email address
+    
+        $headers = "From: $name <$email>\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+        $email_body = "New contact form submission:\n\n";
+        $email_body .= "Name: $name\n";
+        $email_body .= "Email: $email\n";
+        $email_body .= "Subject: $subject\n";
+        $email_body .= "Message:\n$message\n";
+
+        if (mail($to, "Enquiry Form", $email_body, $headers)) {
+            echo "<script>alert('Your message has been sent successfully.'); window.location.href='index.php';</script>";
+            exit();
+        } else {
+            echo "<script>alert('Failed to send message. Please try again later.'); window.history.back();</script>";
+            exit();
+        }
+    }
+    ?>
 
 </body>
 
